@@ -1,9 +1,7 @@
-#!/usr/bin/env python
-# encoding: utf-8
 
 """
 @Time   : {2019/12/12} {10:05}
-@Author : jooden
+@Author : jaden
 @Desc   :
 """
 
