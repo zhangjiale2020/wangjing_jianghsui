@@ -1,0 +1,20 @@
+#错误总结：
+#1、静态方法的定义：def denglu(cls, **kwargs)
+#2、request.files[]：  它是个字典 两种方法引入：(1).get(''), (2).files['key']
+#3、encoding='gbk' 编码的gbk 这是因为XLS导出.csv 文件时，他是 gbk 格式
+#4、data_list = data.to_dict(orient='records')  要将data转为dict类型
+#5、看清楚model的类型格式 ， 赋值要明确：
+    """
+            shop_dict = {'shop_id': r.get('shop_id'),
+                         'shop_name': {'cn': str(r.get('shop_name')), 'en': '', 'jp': str(r.get('shop_name'))},
+                         'shop_image': {'HeadImage': {'data': [[r.get('shop_image')], [r.get('images')]], 'home': 1}},
+                         'longitude': r.get("long"),
+                         'latitude': r.get("lat"),
+                         'address': {'cn': r.get('address'), 'en': '', 'jp': ''},
+                         'mobile': [r.get('phone')],
+                         'remarks': r.get('des'),
+                         'extra': {'cn': r.get('extra'), 'en': '', 'jp': ''},
+                         'order_check_to_shop': r.get('tag'),
+                         }
+    """
+ #

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../static/jquery/jquery.min.js"></script>
+          <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+</head>
+<body>
+<div>
+         <form id="upload" action="http://127.0.0.1:5000/r/" enctype="multipart/form-data" method="post">
+          <input type="file" name="file" id="pic"/>
+             <input type="button" value="存储" οnclick="uploadPic()"></input>
+             <span class="showUrl"></span>
+             <img src="" class="showPic" alt="">
+         </form>
+      </div>
+</body>
+<script type="text/javascript">
+      function uploadPic() {
+        var form = document.getElementById('upload'),
+          formData = new FormData(form);
+         $.ajax({
+            url:"/get_account",
+            type:"post",
+            data:formData,
+            processData:false,
+            contentType:false,
+            success:function(res){
+             if(res){
+              alert("上传成功！");
+             }
+             console.log(res);
+             $("#pic").val("");
+             $(".showUrl").html(res);
+             $(".showPic").attr("src",res);
+            },
+            error:function(err){
+             alert("网络连接失败,稍后重试",err);
+            }
+
+         })
+      }
+   </script>
+</html>

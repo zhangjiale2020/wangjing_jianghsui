@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="application/javascript" src="https://res.ksher.cn/jquery/jquery.min.js"></script>
+</head>
+<body>
+<form id="upload-form" action="http://127.0.0.1:5000/r/" method="post" enctype="multipart/form-data" >
+　　　<input type="file" id="upload" name="upload" /> <br />
+　　　<input type="submit" value="存储" />
+</form>
+<script type="application/javascript">
+    $(document).ready(function(){
+      $("#logout").click(function(){
+          $.ajax({
+            //请求方式
+            type : "GET",
+            //请求的媒体类型
+            contentType: "application/json;charset=UTF-8",
+            //请求地址
+            url : "/api/logout",
+            //数据，json字符串
+            //请求成功
+            success : function(result) {
+                console.log(result);
+            },
+            //请求失败，包含具体的错误信息
+            error : function(e){
+                console.log(e.status);
+                console.log(e.responseText);
+            }
+        });
+      });
+      $("#test").click(function(){
+          $.ajax({
+            //请求方式
+            type : "POST",
+            //请求的媒体类型
+            contentType: "application/json;charset=UTF-8",
+            //请求地址
+            url : "/api/app/test",
+            //数据，json字符串
+            data : JSON.stringify([]),
+            //请求成功
+            success : function(result) {
+                console.log(result);
+            },
+            //请求失败，包含具体的错误信息
+            error : function(e){
+                console.log(e.status);
+                console.log(e.responseText);
+            }
+        });
+      });
+    });
+
+</script>
+
+</body>
+</html>
