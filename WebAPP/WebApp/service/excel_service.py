@@ -20,11 +20,7 @@ class ExcelService(BaseService):
     """
 
     def read_txt(self, ):
-        # if request.methods == 'GET':
         data_url = r"D:\wangjing\jiangshui_\2010\SURF_CLI_CHN_MUL_DAY-PRE-13011-201012.TXT"
-        # data_list = []
-        # if not data_url:
-        #     return self.render_error3(-1, '没有数据')
         with open(data_url, "r") as f:  # 设置文件对象,with 是异常处理的
             data = f.readlines()
             current_list = []  # 这是暂时储存地方

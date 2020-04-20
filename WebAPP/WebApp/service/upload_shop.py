@@ -19,17 +19,17 @@ def Upload_Shop(**params):
     # 向shop_info中添加数据：
     # :return:
     # """
-    # # 1.导入数据
-    # # a = request.files['upload']
-    # a = 'C://Users//EDZ//Desktop//Bespo_20200120.csv'
-    # data = pd.read_csv(a,  header=None, encoding='gbk', skiprows='',
-    #                    names=['shop_id', 'shop_name', 'shop_image', 'long', 'lat',
-    #                           'cate1', 'cate2', 'address', 'price', 'images',
-    #                           'phone', 'des', 'extra', 'tag']).fillna('None')
-    # # 2.转化类型为dict型
-    # data_list = data.to_dict(orient='records')
-    # cate_dict = {}
-    # shop_price = {}
+    # 1.导入数据
+    # a = request.files['upload']
+    a = 'C://Users//EDZ//Desktop//Bespo_20200120.csv'
+    data = pd.read_csv(a,  header=None, encoding='gbk', skiprows='',
+                       names=['shop_id', 'shop_name', 'shop_image', 'long', 'lat',
+                              'cate1', 'cate2', 'address', 'price', 'images',
+                              'phone', 'des', 'extra', 'tag']).fillna('None')
+    # 2.转化类型为dict型
+    data_list = data.to_dict(orient='records')
+    cate_dict = {}
+    shop_price = {}
     # # 3.遍历数据，拿到所要字段
     # for r in data_list:
     #     shop_dict = {'shop_id': r.get('shop_id'),

@@ -1,8 +1,6 @@
-import xlsxwriter
-from flask import Flask, render_template, send_file, request
+from flask import Flask, render_template, send_file
 from WebAPP.WebApp.ext import db
-from WebAPP.WebApp.service import emptyblist, excel_service, write_excle, upload_shop, Upload_Shop, Cha_Ru, GetLong
-import pymysql
+from WebAPP.WebApp.service import emptyblist, excel_service, write_excle,  Upload_Shop, Cha_Ru, GetLong
 
 app = Flask(__name__)
 
